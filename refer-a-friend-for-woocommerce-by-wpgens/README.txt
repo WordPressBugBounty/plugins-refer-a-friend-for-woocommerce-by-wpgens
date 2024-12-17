@@ -2,8 +2,8 @@
 Contributors: goran87
 Tags: refer a friend, refer, referral, woocommerce, ecommerce, affiliate, referral marketing,reward, sponsors, sponsorship
 Requires at least: 4.2
-Tested up to: 6.5
-Stable tag: 1.3.2
+Tested up to: 6.7
+Stable tag: 1.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,6 +74,8 @@ If you have any suggestions/feedback/feature on how i could improve Refer a Frie
 3. screenshot-3.png
 
 == Changelog ==
+= 1.3.3 =
+* WP version bump.
 = 1.3.2 =
 * WP version bump. Preparing for big update. 
 = 1.3.1 =

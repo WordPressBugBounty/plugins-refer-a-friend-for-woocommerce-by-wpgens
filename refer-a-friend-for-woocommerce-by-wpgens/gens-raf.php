@@ -11,7 +11,7 @@
  * Plugin Name:       Refer A Friend for WooCommerce by WPGens
  * Plugin URI:        http://wpgens.com
  * Description:       Simple yet powerful referral system for WooCommerce. Each customer has referral link that rewards them with a coupon after someone makes a purchase through their link. Check premium version for more features.
- * Version:           1.3.2
+ * Version:           1.3.3
  * Author:            Goran Jakovljevic
  * Author URI:        http://wpgens.com
  * License:           GPL-2.0+
