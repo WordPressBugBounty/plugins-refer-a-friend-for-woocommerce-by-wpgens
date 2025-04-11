@@ -3,7 +3,7 @@ Contributors: goran87
 Tags: refer a friend, refer, referral, woocommerce, ecommerce, affiliate, referral marketing,reward, sponsors, sponsorship
 Requires at least: 4.2
 Tested up to: 6.7
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ Referral System for WooCommerce. Each customer has referral link that rewards th
 
 ### Increase your store sales through Word Of Mouth, by having people promote your products to their friends. ###
 
-Compatible with WooCommerce from 2.4 and above, including the latest 8.x version of WooCommerce.
+Compatible with WooCommerce from 2.4 and above, including the latest 9.x version of WooCommerce.
 
 This plugin will create a simple but powerful referral system on your website. Instead of giving money to your referrals, you are rewarding them with coupons that they can use to get discounts when buying on your website, or even free products, depending on a coupon settings. Free version comes packed with lots of features, <a href="https://wpgens.com/downloads/refer-a-friend-for-woocommerce-premium/" rel="friend" title="RAF">premium version has shortcodes, coupons for friends and a couple more options.</a>
 
@@ -74,6 +74,8 @@ If you have any suggestions/feedback/feature on how i could improve Refer a Frie
 3. screenshot-3.png
 
 == Changelog ==
+= 1.3.4 =
+* WP version bump.
 = 1.3.3 =
 * WP version bump.
 = 1.3.2 =
