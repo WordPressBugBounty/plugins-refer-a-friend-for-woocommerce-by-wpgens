@@ -69,8 +69,9 @@ class WPGens_Settings_RAF extends WC_Settings_Page {
 		$sections = array(
 			''         => __( 'General', 'gens-raf' ),
 			'emails' => __( 'Email', 'gens-raf' ),
-			'howto' => __( 'How to use RAF plugin', 'gens-raf' ),
-			'premium' => __( 'RAF PREMIUM version', 'gens-raf' )
+			'howto' => __( 'Help', 'gens-raf' ),
+			'premium' => __( '💎 Get Premium', 'gens-raf' ),
+			'plugins' => __( 'Recommended Plugins', 'gens-raf' )
 		);
 
 		return apply_filters( 'woocommerce_get_sections_' . $this->id, $sections );
@@ -121,21 +122,23 @@ class WPGens_Settings_RAF extends WC_Settings_Page {
 			case 'howto':
 				$settings = array(
 					array(
-						'name' => __( 'Small tutorial to help you get started', 'gens-raf' ),
+						'name' => __( 'Quick Setup Guide - Get Started in 3 Easy Steps', 'gens-raf' ),
 						'type' => 'title',
-						'desc' => sprintf( __( 'Thanks for using Refer a Friend plugin. You can purchase premium version and support us on <a href="%s" target="_blank">this page</a><br/>
-							<h3>SETUP GUIDE</h3>
-							<ul>
-								<li>1. After installing plugin, go to Refer a friend settings (this page), and click on General tab inside Refer a friend tab. Then setup coupon options.</li>
-								<li>2. Click on email tab and populate text that will be sent to user after he gets coupon.</li>
-								<li>Thats it! Now every user will have referral link in their account page. After someone makes a purchase through their referral link, and after order is marked as complete. They will recieve coupon in their inbox. For every order that was done through referral, in a single order screen, just below customer you will see the name of the person who referred him. Like on this <a href="%s" target="_blank">screenshot.</a></li>
-							</ul>
-							', 'gens-raf' ), 'https://wpgens.com/downloads/refer-a-friend-for-woocommerce-premium/','https://wpgens.com/slike/referral2.png'),
+						'desc' => sprintf( __( 'Thanks for using the Refer a Friend plugin! You can purchase the premium version and support us on <a href="%s" target="_blank">this page</a><br/>
+							<h3>📋 SETUP GUIDE</h3>
+							<ol>
+								<li><strong>Configure General Settings:</strong> After installing the plugin, go to the Refer a Friend settings (this page) and click on the General tab. Set up your coupon options including discount type, amount, and expiration settings.</li>
+								<li><strong>Customize Email Templates:</strong> Click on the Email tab and customize the message that will be sent to users when they receive their coupon code.</li>
+								<li><strong>You\'re Done!</strong> Every user will now have a referral link in their account page. When someone makes a purchase through their referral link and the order is marked as complete, the referrer will receive a coupon in their inbox. For orders made through referrals, you can see the referrer\'s name in the order details screen, just below the customer information. <a href="%s" target="_blank">View example screenshot.</a></li>
+							</ol>
+							<br/>
+							<strong>💡 Pro Tip:</strong> Make sure to test the referral flow with a test order to ensure everything works correctly before going live!
+							', 'gens-raf' ), 'https://wpgens.com/downloads/refer-a-friend-for-woocommerce-premium/?utm_source=raf-free','https://wpgens.com/slike/referral2.png'),
 						'id'   => 'plugin_options',
 					),
 					array(
 						'id'		=> '',
-						'name' 		=> __( 'Plugins', 'gens-raf' ),
+						'name' 		=> __( 'Help', 'gens-raf' ),
 						'type' 		=> 'sectionend',
 						'desc' 		=> '',
 						'id'   		=> 'plugin_options',
@@ -145,16 +148,43 @@ class WPGens_Settings_RAF extends WC_Settings_Page {
 			case 'plugins':
 				$settings = array(
 					array(
-						'name' => __( 'Check out all of our super cool plugins', 'gens-raf' ),
+						'name' => __( 'Recommended WP Gens Plugins', 'gens-raf' ),
 						'type' => 'title',
-						'desc' => sprintf( __( 'Thanks for using Refer a Friend plugin. If you have any cool idea that we could add to plugin, be sure to contact us at <a target="_blank" href="%s">goran@wpgens.com</a>. 
-						<br/>Our plugins are coded with best practices in mind, they will not slow down your site or spam database. Guaranteed to work and always up to date.
-						Check out all of our plugins at: <a target="_blank" href="%s">this link.</a> Also use that link to signup to our newsletters and get notified when new plugin is out. No SPAM, promise.', 'gens-raf' ), 'mailto:goran@wpgens.com', 'https://wpgens.com'),
+						'desc' => __( 'Supercharge your WooCommerce store with these powerful plugins from WP Gens. Each plugin is carefully crafted to enhance your store\'s functionality and boost your sales.
+						<br/><br/>
+						<div style="margin: 20px 0;">
+							
+							<div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #f9f9f9; margin-bottom: 20px;">
+								<h3 style="margin-top: 0; color: #2271b1;">💎 Refer a Friend Premium</h3>
+								<p style="font-size: 14px; color: #666; margin-bottom: 15px;">Take your referral program to the next level with advanced features, detailed analytics, and powerful customization options.</p>
+								<a href="https://wpgens.com/downloads/refer-a-friend-for-woocommerce-premium/?utm_source=raf-free" target="_blank" class="button-primary" style="text-decoration: none; padding: 8px 16px; border-radius: 4px; display: inline-block;">Get Premium Features</a>
+							</div>
+							
+							<div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #f9f9f9; margin-bottom: 20px;">
+								<h3 style="margin-top: 0; color: #2271b1;">🎯 Points & Rewards for WooCommerce</h3>
+								<p style="font-size: 14px; color: #666; margin-bottom: 15px;">Create a comprehensive loyalty program that rewards customers with points for purchases, reviews, and social sharing.</p>
+								<a href="https://wpgens.com/downloads/points-and-rewards-for-woocommerce/?utm_source=raf-free" target="_blank" class="button-primary" style="text-decoration: none; padding: 8px 16px; border-radius: 4px; display: inline-block;">Get Points & Rewards</a>
+							</div>
+							
+							<div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #f9f9f9; margin-bottom: 20px;">
+								<h3 style="margin-top: 0; color: #2271b1;">📊 UTM Tracking for WooCommerce</h3>
+								<p style="font-size: 14px; color: #666; margin-bottom: 15px;">Track your marketing campaigns with precision and see exactly which channels drive the most sales to your store.</p>
+								<a href="https://wpgens.com/downloads/woocommerce-utm-tracking/?utm_source=raf-free" target="_blank" class="button-primary" style="text-decoration: none; padding: 8px 16px; border-radius: 4px; display: inline-block;">Get UTM Tracking</a>
+							</div>
+							
+						</div>
+						
+						<br/>
+						<p style="text-align: center; padding: 20px; background: #e7f3ff; border-radius: 8px; margin: 20px 0;">
+							<strong>💡 Pro Tip:</strong> All our plugins work seamlessly together to create a powerful ecommerce ecosystem. 
+							<br/>Questions? <a href="mailto:goran@wpgens.com">Contact us</a> - we\'re here to help!
+						</p>
+						', 'gens-raf' ),
 						'id'   => 'plugin_options',
 					),
 					array(
 						'id'		=> '',
-						'name' 		=> __( 'Plugins', 'gens-raf' ),
+						'name' 		=> __( 'Recommended Plugins', 'gens-raf' ),
 						'type' 		=> 'sectionend',
 						'desc' 		=> '',
 						'id'   		=> 'plugin_options',
@@ -164,30 +194,49 @@ class WPGens_Settings_RAF extends WC_Settings_Page {
 			case 'premium':
 				$settings = array(
 					array(
-						'name' => __( 'PREMIUM Version has additional features, such as shortcodes:', 'gens-raf' ),
+						'name' => __( '💎 Upgrade to Premium - Supercharge Your Referral Program', 'gens-raf' ),
 						'type' => 'title',
-						'desc' => sprintf( __( 'In order to continue building free plugins, we need sustainable model, thats where premium version comes in. 
-						<br/>Besides of all the features that free version has, premium version also has:
-						– Simple Shortcode <br/>
-						- Advance Shortcode
-						– Give coupon to person being referred as well
-						– Refer a Friend Woocommerce Tab under each product, that comes with share icons that can directly share referral links (check a screenshot) or check example tab on twenty seventeen theme 
-						– Contact Form 7 shortcode
-						– Minimum amount person needs to purchase in order for coupon to be generated
-						– Each person has statistics how many people he refered, admin sees this for each person as well
-						– Order details screen shows referral info if order was made through referral.
-						– Referral statistics/info screen for admin.
-						– Enable coupons for specific products only
-						– Set Expiry date for each coupon
-						– One year of support & free updates
-						<br/>
-						Checkout plugin <a target="_blank" href="%s">at this link.</a>
-						', 'gens-raf' ), 'https://wpgens.com/downloads/refer-a-friend-for-woocommerce-premium/'),
+						'desc' => __( 'Take your referral program to the next level with powerful premium features that help you grow your business faster.
+						<br/><br/>
+						<div style="margin: 20px 0;">
+							<div style="border: 1px solid #ddd; border-radius: 8px; padding: 20px; background: #f9f9f9; margin-bottom: 20px;">
+								<h3 style="margin-top: 0; color: #2271b1;">🚀 Enhanced Integration & Display Options:</h3>
+								<ul style="margin-bottom: 15px;">
+									<li>✅ <strong>Flexible Shortcodes</strong> - Simple and advanced shortcodes for any page or post</li>
+									<li>✅ <strong>Product-Level Referral Tabs</strong> - Add referral sharing directly to product pages with social icons</li>
+									<li>✅ <strong>Contact Form 7 Integration</strong> - Seamlessly integrate with your contact forms</li>
+								</ul>
+								
+								<h3 style="color: #2271b1;">🎯 Advanced Targeting & Control:</h3>
+								<ul style="margin-bottom: 15px;">
+									<li>✅ <strong>Minimum Purchase Requirements</strong> - Set minimum order amounts for coupon generation</li>
+									<li>✅ <strong>Product-Specific Coupons</strong> - Enable referral rewards for specific products only</li>
+									<li>✅ <strong>Coupon Expiry Dates</strong> - Set automatic expiration dates for better control</li>
+									<li>✅ <strong>Dual Rewards System</strong> - Reward both referrer and referred customer</li>
+								</ul>
+								
+								<h3 style="color: #2271b1;">📊 Comprehensive Analytics & Tracking:</h3>
+								<ul style="margin-bottom: 15px;">
+									<li>✅ <strong>Individual User Statistics</strong> - Track referral performance for each customer</li>
+									<li>✅ <strong>Admin Dashboard Analytics</strong> - Complete referral statistics and reporting</li>
+									<li>✅ <strong>Order Integration</strong> - See referral information directly in order details</li>
+								</ul>
+								
+								<h3 style="color: #2271b1;">🛡️ Premium Support & Updates:</h3>
+								<ul style="margin-bottom: 20px;">
+									<li>✅ <strong>One Year of Premium Support</strong> - Get help when you need it</li>
+									<li>✅ <strong>Free Updates</strong> - Stay current with new features and improvements</li>
+								</ul>
+								
+								<a href="https://wpgens.com/downloads/refer-a-friend-for-woocommerce-premium/?utm_source=raf-free" target="_blank" class="button-primary" style="text-decoration: none; padding: 8px 16px; border-radius: 4px; display: inline-block;">Get Premium Now</a>
+							</div>
+						</div>
+						', 'gens-raf' ),
 						'id'   => 'plugin_options',
 					),
 					array(
 						'id'		=> '',
-						'name' 		=> __( 'Plugins', 'gens-raf' ),
+						'name' 		=> __( 'Premium', 'gens-raf' ),
 						'type' 		=> 'sectionend',
 						'desc' 		=> '',
 						'id'   		=> 'plugin_options',
@@ -311,6 +360,11 @@ class WPGens_Settings_RAF extends WC_Settings_Page {
 
 		$settings = $this->get_settings( $current_section );
 		WC_Admin_Settings::output_fields( $settings );
+		
+		// Hide save button on informational tabs
+		if ( in_array( $current_section, array( 'howto', 'premium', 'plugins' ) ) ) {
+			echo '<style type="text/css">.woocommerce-save-button { display: none !important; }</style>';
+		}
 	}
 
 

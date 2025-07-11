@@ -1,9 +1,9 @@
 === Refer A Friend for WooCommerce by WPGens ===
 Contributors: goran87
-Tags: refer a friend, refer, referral, woocommerce, ecommerce, affiliate, referral marketing,reward, sponsors, sponsorship
+Tags: refer a friend, refer, referral, woocommerce, ecommerce
 Requires at least: 4.2
-Tested up to: 6.7
-Stable tag: 1.3.4
+Tested up to: 6.8.1
+Stable tag: 1.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,6 +74,8 @@ If you have any suggestions/feedback/feature on how i could improve Refer a Frie
 3. screenshot-3.png
 
 == Changelog ==
+= 1.3.5 =
+* Minor updates to plugin settings and WP version bump.
 = 1.3.4 =
 * WP version bump.
 = 1.3.3 =

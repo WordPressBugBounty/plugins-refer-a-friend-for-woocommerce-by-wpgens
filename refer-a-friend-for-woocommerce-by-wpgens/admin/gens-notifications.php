@@ -137,7 +137,7 @@ if(!function_exists('wpgens_notification'))
 }
 
 $gens_current_user = wp_get_current_user();
-$htmlNotification = '<p>Hey '.$gens_current_user->user_firstname.', thanks for using Refer a Friend by WPGens. In this update, we made coupon code much smaller, and every code starts with RAF- text. Also check out PREMIUM Version with additional features <a target="_blank" href="https://wpgens.com/downloads/refer-a-friend-for-woocommerce-premium/">on this link.</a> Click on top right x to remove this window permanently.</p>
-    <p><strong>~ Goran Jakovljevic<br>Founder of WPGens</strong></p>';
+$htmlNotification = '<p>Hi '.$gens_current_user->user_firstname.', thanks for using <b>Refer a Friend</b>! 🎉 If you like this plugin, <a target="_blank" href="https://wpgens.com/downloads/refer-a-friend-for-woocommerce-premium/?utm_source=raf-free" style="font-weight: bold;">explore Premium Features</a> or check out our <a target="_blank" href="https://wpgens.com/?utm_source=raf-free" style="font-weight: bold;">other WooCommerce plugins</a> to supercharge your store.</p>
+    <p><strong>~ Goran Jakovljevic, Founder of WPGens</strong></p>';
 
-wpgens_notification( "raf-free-1_1_2", $htmlNotification, $type = 'info', $dismissible = true, $class = '', $network = false );
+wpgens_notification( "raf-free-1_3_4", $htmlNotification, $type = 'info', $dismissible = true, $class = '', $network = false );
