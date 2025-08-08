@@ -1,6 +1,6 @@
 === Refer A Friend for WooCommerce by WPGens ===
 Contributors: goran87
-Tags: refer a friend, refer, referral, woocommerce, ecommerce
+Tags: refer a friend, referral, affiliate, woocommerce, ecommerce
 Requires at least: 4.2
 Tested up to: 6.8.1
 Stable tag: 1.3.5
