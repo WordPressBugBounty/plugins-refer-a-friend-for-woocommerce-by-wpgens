@@ -62,18 +62,48 @@ class Gens_RAF_Public {
 	 * @return   string
 	 */
 	public function save_raf_id( $order_id ) {
-		$active = get_option( 'gens_raf_disable' );
-		/*
-		$order = new WC_Order( $order_id );
-	    $myuser_id = (int)$order->user_id;
-	    $user_info = get_userdata($myuser_id);
-	    $items = $order->get_items();
-		*/
-		if ( isset($_COOKIE["gens_raf"]) && $active != "yes" ) {
-			$rafID = sanitize_text_field($_COOKIE["gens_raf"]);
-			update_post_meta( $order_id, '_raf_id', $rafID);
+		$order = wc_get_order( $order_id );
+		if ( $order ) {
+			$this->save_raf_id_to_order( $order );
 		}
-    	return $order_id;
+		return $order_id;
+	}
+
+	/**
+	 * Save the referral cookie on Checkout block orders.
+	 * woocommerce_store_api_checkout_update_order_meta hook.
+	 *
+	 * @since    1.3.7
+	 * @param    WC_Order $order Order object.
+	 */
+	public function save_raf_id_checkout_block( $order ) {
+		if ( $order instanceof WC_Order ) {
+			$this->save_raf_id_to_order( $order );
+		}
+	}
+
+	/**
+	 * Copy the gens_raf cookie onto the order.
+	 *
+	 * Order meta is written through the order object so it is stored correctly
+	 * when WooCommerce uses High-Performance Order Storage.
+	 *
+	 * @since    1.3.7
+	 * @param    WC_Order $order Order object.
+	 */
+	private function save_raf_id_to_order( $order ) {
+		$active = get_option( 'gens_raf_disable' );
+		if ( ! isset( $_COOKIE['gens_raf'] ) || 'yes' === $active ) {
+			return;
+		}
+
+		$raf_id = sanitize_text_field( wp_unslash( $_COOKIE['gens_raf'] ) );
+		if ( '' === $raf_id ) {
+			return;
+		}
+
+		$order->update_meta_data( '_raf_id', $raf_id );
+		$order->save();
 	}
 
 	/**
@@ -83,9 +113,13 @@ class Gens_RAF_Public {
 	 * @since    1.0.0
 	 */
 	public function gens_create_send_coupon($order_id) {
-		$rafID = sanitize_text_field(get_post_meta( $order_id, '_raf_id', true));
+		$order = wc_get_order( $order_id );
+		if ( ! $order ) {
+			return $order_id;
+		}
+
+		$rafID = sanitize_text_field( $order->get_meta( '_raf_id', true ) );
 		// Get id of user that made order so that user cant use his own ref link.
-		$order = new WC_Order( $order_id );
 		$order_user_id = $order->get_user_id();
 		$gens_users = get_users( array(
 			"meta_key" => "gens_referral_id",
@@ -93,7 +127,7 @@ class Gens_RAF_Public {
 			"number" => 1, 
 			"fields" => "ID"
 		) );
-		$user_id = $gens_users[0];
+		$user_id = ! empty( $gens_users ) ? $gens_users[0] : 0;
 		
 		// user ref exists, refID as well, and user is not using his own referral link ? If all good, proceed.
 		if ( $gens_users && !empty($rafID) && ($user_id != $order_user_id) ) {
@@ -338,9 +372,7 @@ class Gens_RAF_Public {
 	 */
 	public function show_admin_raf_notes($order) { 
 
-		$order_id = ( version_compare( WC_VERSION, '2.7', '<' ) ) ? $order->id : $order->get_id(); 
-
-		$referralID = get_post_meta( $order_id, '_raf_id', true );
+		$referralID = $order->get_meta( '_raf_id', true );
 
 		if (!empty($referralID)) {
 		

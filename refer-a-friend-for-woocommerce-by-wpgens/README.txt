@@ -3,7 +3,7 @@ Contributors: goran87
 Tags: refer a friend, referral, affiliate, woocommerce, ecommerce
 Requires at least: 4.2
 Tested up to: 7.0
-Stable tag: 1.3.6
+Stable tag: 1.3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,7 +51,7 @@ Refer a Friend has also PREMIUM version that comes up with additional features:
 * More filters and actions for developers
 * One year of support & free updates
 
-<a href="https://wpgens.com/downloads/refer-a-friend-for-woocommerce-premium/" rel="friend" title="RAF">Click here to check it out!</a>
+<a href="https://wpgens.com/downloads/refer-a-friend-for-woocommerce-premium/?utm_source=raf_free" rel="friend" title="RAF">Click here to check it out!</a>
 
 
 If you have any suggestions/feedback/feature on how i could improve Refer a Friend plugin, please get in touch with me via email goran@wpgens.com.
@@ -74,6 +74,8 @@ If you have any suggestions/feedback/feature on how i could improve Refer a Frie
 3. screenshot-3.png
 
 == Changelog ==
+= 1.3.7 =
+* Fixed referral rewards on the Checkout block. The referrer is saved on the order, and the coupon and email are sent when the order is completed.
 = 1.3.6 =
 * Added support for WordPress 7.0.
 = 1.3.5 =

@@ -69,7 +69,7 @@ class Gens_RAF {
 	public function __construct() {
 
 		$this->gens_raf = 'gens-raf';
-		$this->version = '1.3.4';
+		$this->version = '1.3.7';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -168,6 +168,8 @@ class Gens_RAF {
 		$this->loader->add_action( 'woocommerce_order_status_completed', $plugin_public, 'gens_create_send_coupon' );
 		// Save RAF ID in Order Meta after Order is Complete
 		$this->loader->add_action('woocommerce_checkout_update_order_meta', $plugin_public, 'save_raf_id');
+		// Checkout block places the order through the Store API and does not fire the classic hook above.
+		$this->loader->add_action('woocommerce_store_api_checkout_update_order_meta', $plugin_public, 'save_raf_id_checkout_block');
 		//Show referal link on My Account Page
 		$this->loader->add_action('woocommerce_before_my_account', $plugin_public, 'account_page_show_link');
 		//Show unused referral coupons
